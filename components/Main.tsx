@@ -1,29 +1,27 @@
-import { Box, Grid, Typography, Stack } from "@mui/material";
+import { useState, useEffect } from "react";
+import TaskList from "./views/TaskList";
 
-const Card = (props: { name: string }) => (
-  <Box style={{ margin: "10px 20px", background: "beige" }}>
-    <Typography variant="h5" align="center">
-      {props.name}
-    </Typography>
-  </Box>
-);
+const INITIAL_TASKS = ["Wake up", "Go to sleep"];
 
-const Main = () => (
-  <main>
-    <Grid container>
-      <Grid xs={12} item>
-        <Typography variant="h3" align="center">
-          Tasks
-        </Typography>
-      </Grid>
-      <Grid xs={12} item>
-        <Stack direction="column">
-          <Card name="Wake up" />
-          <Card name="Go to sleep" />
-        </Stack>
-      </Grid>
-    </Grid>
-  </main>
-);
+const Main = () => {
+  const [tasks, setTasks] = useState<string[]>(INITIAL_TASKS);
+
+  const handleAdd = (task: string) => {
+    setTasks(tasks.concat([task]));
+  };
+
+  const handleRemove = (task: string) => {
+    setTasks(tasks.filter((task_i) => task_i !== task));
+  };
+  return (
+    <main>
+      <TaskList
+        tasks={tasks}
+        handleAdd={handleAdd}
+        handleRemove={handleRemove}
+      />
+    </main>
+  );
+};
 
 export default Main;
