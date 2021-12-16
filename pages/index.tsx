@@ -7,7 +7,7 @@ const Home: NextPage = () => {
   return (
     <>
       <Head>
-        <title>Todo App</title>
+        <title>Todos</title>
         <meta name="description" content="A very ambitious todo app." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
