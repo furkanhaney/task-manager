@@ -1,5 +1,5 @@
 {
-  "name": "todo-app",
+  "name": "task-manager",
   "private": true,
   "scripts": {
     "dev": "next dev",
