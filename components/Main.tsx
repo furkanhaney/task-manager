@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { useState, useEffect } from "react";
 import TaskList from "./views/TaskList";
 
@@ -14,13 +15,15 @@ const Main = () => {
     setTasks(tasks.filter((task_i) => task_i !== task));
   };
   return (
-    <main>
-      <TaskList
-        tasks={tasks}
-        handleAdd={handleAdd}
-        handleRemove={handleRemove}
-      />
-    </main>
+    <Grid justifyContent="center" container>
+      <Grid xs={12} md={8} lg={6} item>
+        <TaskList
+          tasks={tasks}
+          handleAdd={handleAdd}
+          handleRemove={handleRemove}
+        />
+      </Grid>
+    </Grid>
   );
 };
 
