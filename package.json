@@ -1,6 +1,12 @@
 {
   "name": "task-manager",
-  "private": true,
+  "engines": {
+    "node": "14.x",
+    "npm": "8.x"
+  },
+  "cacheDirectories": [
+      ".next/cache"
+  ],
   "scripts": {
     "dev": "next dev",
     "build": "next build",
